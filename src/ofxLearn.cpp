@@ -3,7 +3,8 @@
 
 
 #include "ofxLearn.h"
-
+#define _USE_MATH_DEFINES // visual studio M_PI
+#include <math.h>
 
 inline sample_type ofxLearn::vectorToSample(vector<double> sample_) {
     sample_type sample(sample_.size());
@@ -297,7 +298,7 @@ void ofxLearnKMeans::train()
     for (int i = 0; i < samples.size(); ++i) {
         clusters.push_back(kmeans(samples[i]));
     }
-    return clusters;
+    return;
 }
 
 
@@ -455,7 +456,7 @@ void ofxLearn::svd()
     for (int x = 1; x <= 100; x++)
     {
         tp1 = x/100.0;
-        tp2 = pi*x == 0 ? 1 : sin(pi * x) / (pi * x);
+        tp2 = M_PI * x == 0 ? 1 : sin(M_PI * x) / (M_PI * x);
         
         rs.add(tp2);
     }

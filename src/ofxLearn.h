@@ -67,8 +67,8 @@ public:
     void addSample(sample_type sample, double label);
     void clearTrainingInstances();
     
-    virtual double predict(vector<double> & sample) { }
-    virtual double predict(sample_type & sample) { }
+	virtual double predict(vector<double> & sample) { return 0.0; }
+	virtual double predict(sample_type & sample) { return 0.0; }
     
 protected:
 
